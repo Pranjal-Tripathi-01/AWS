@@ -21,8 +21,15 @@ empDf = glueContext.create_dynamic_frame.from_catalog(
 empDf.printSchema()
 sparkEmpDf = empDf.toDF()
 sparkEmpDf.show()
-df2 = sparkEmpDf.select("employee_id")
-df2.show()
+print(sparkEmpDf.count())
+
+sparkEmpDf = sparkEmpDf.withColumn("salary", col("salary") * 2)
+
+glueContext.write_dynamic_frame.from_options(frame = empDf,
+                                             connection_type = "s3",
+                                             connection_options = {"path": "s3://etl-project/"},
+                                             format = "csv")
+
 
 # job = Job(glueContext)
 # job.init(args['JOB_NAME'], args)
