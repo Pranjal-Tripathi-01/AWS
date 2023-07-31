@@ -1,4 +1,4 @@
-# S3 -> Glue -> s3  
+# S3 -> Glue -> S3  
 
 An ETL pipeline integrating Amazon S3, Amazon Glue and Spark.
 
