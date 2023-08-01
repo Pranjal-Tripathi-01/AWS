@@ -6,9 +6,10 @@ An ETL pipeline integrating Amazon S3, Amazon Glue and Spark.
 ## Project Description
 
 1. CSV files from local is uploaded to S3 bucket.
-2. Crawler is setup for S3.
-3. Data is read through spark glue context.
-4. Data is transformed and loaded back into S3.
+2. (sample_data.csv have 120 rows and sample_data2.csv have 7 rows)
+3. Crawler is setup for S3.
+4. Data is read through spark glue context.
+5. Data is transformed and loaded back into S3.
 
 ## Resources:
 1. AWS
